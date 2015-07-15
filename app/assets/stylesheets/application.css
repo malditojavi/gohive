@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+margin: 0;
+font-size: 16px;
+font-family:'Avenir Next', sans-serif;
+background-color: #FCFDFF;
+}
+.individualeventgoer {
+  width: 3rem;
+  border-radius: 50px;
+  display: inline;
+}
+.goeravatar {
+  width: 3rem;
+  border-radius: 50px;
+}
+.eventtitle {
+  display: inline;
+  font-size: 3rem;
+}
+.eventrow {
+  background-color: #cacaca;
+  padding: 1rem;
+}
+.eventrow:hover {
+  background-color: lightblue;
+  padding: 1rem;
+}
+.specialbanner {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 3rem;
+  background-color: grey;
+}
+
+.topbanner {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 10rem;
+  background-color: grey;
+  background-image: url(https://wellfoundedbody.files.wordpress.com/2014/11/partypeople.jpg);
+  background-size: 70%;
+}
+
+.dayheading {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.showmoreday {
+  background-color: grey;
+  border-radius: 50px;
+  width: auto;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.center {
+  text-align: center;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.red {
+  opacity: 0.3;
+}
+
+@font-face {
+    font-family:'Avenir Next';
+    src:url("http://petithacks.com/app/assests/fonts/AvenirNextLTPro-Regular.otf");
+    src:url("http://petithacks.com/app/assests/fonts/AvenirNextLTPro-Bold.otf");
+    src:url("http://petithacks.com/app/assests/fonts/GothamBlack.otf");
+    src:url("http://petithacks.com/app/assests/fonts/GothamBold.otf")
+}
