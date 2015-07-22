@@ -44,3 +44,11 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'acts_as_votable', '~> 0.10.0'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "rails-erd"
+  gem 'railroady'
+end

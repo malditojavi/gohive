@@ -1,32 +1,24 @@
-  <div class="container">
+<div class=" col-md-12 daywrapper">
     <% @events.each do |event| %>
-
-    <% if event.accepted == 0 %>
-    <div class=" col-md-12 daywrapper">
-      <div class="dayheading"><%= event.date %></div>
-      <div class="row eventrow">
-        <span class="eventlikes">9 Upvotes</span>
-        <a href="/events/<%= event.id %>"><span class="eventtitle"><%= event.name %> | <%= event.city %></span></a>
-        <div class="eventgoers right">
-          <img src="http://i.imgur.com/Lpavq5s.png?1" class="individualeventgoer">
-        </div>
-    </div>
-      <% else %>
-
-      <div class=" col-md-12 daywrapper">
-        <div class="dayheading"><%= event.date %></div>
-        <div class="row eventrow red">
-          <span class="eventlikes">9 Upvotes</span>
-          <a href="/events/<%= event.id %>"><span class="eventtitle"><%= event.name %> | <%= event.city %></span></a>
-          <div class="eventgoers right">
-            <img src="http://i.imgur.com/Lpavq5s.png?1" class="individualeventgoer">
+      <% if event.accepted == 0 %>
+          <div class="row eventrow">
+            <span class="eventlikes">9 Upvotes<%= link_to 'upvote', like_event_path(event), method: :put %></span>
+            <a href="/events/<%= event.id %>"><span class="eventtitle"><%= event.name %> | <%= event.city %></span></a>
+            <div class="eventgoers right">
+              <img src="http://i.imgur.com/Lpavq5s.png?1" class="individualeventgoer">
+            </div>
           </div>
-      </div>
-
+      <% else %>
+          <div class="row eventrow red">
+            <span class="eventlikes">9 Upvotes<%= link_to 'upvote', like_event_path(event), method: :put %></span>
+            <a href="/events/<%= event.id %>"><span class="eventtitle"><%= event.name %> | <%= event.city %></span><span class="">Only visible to admin</span></a>
+            <div class="eventgoers right">
+              <img src="http://i.imgur.com/Lpavq5s.png?1" class="individualeventgoer">
+            </div>
+          </div>
       <% end %>
-      <% end %>
-      <div class="showmoreday center">Show more</div>
-    </div>
-  </div>
+    <% end %>
+    <div class="showmoreday center">Show more</div>
+</div>
 
 <%= link_to 'New Event', new_event_path %>

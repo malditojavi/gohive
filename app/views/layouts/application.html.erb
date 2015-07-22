@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
   <link rel="shortcut icon" type="image/png" href=""/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -22,16 +22,19 @@
     <span class="left">About</span>
     <div calss="cities left"><img src="">Cities</div>
 
-    <div class="right"><img src="http://i.imgur.com/Lpavq5s.png?1" class="goeravatar"></div>
-    <div class="submit right"><a href="/events/new">+</a></div>
+    <% if @current_user.present? %>
+      <div class="right"><a href="/users/sign_in" class="loginshortcuts">Hey <%= user.email %></div>
+    <% else %>
+      <div class="right"><a href="/users/sign_in" class="loginshortcuts">Signup my friend!</a></div>
+    <% end %>
+    <div class="submit right"><a href="/events/new" class="loginshortcuts">Add a new event</a></div>
 
-    <div class="topbanner">
-    Get all the events my friend
-    </div>
+    <div class="topbanner"> <a href="/">Get all the events my friend</a></div>
   </div>
 
-
+<div class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>

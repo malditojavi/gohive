@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+  <p>
+    <strong>Date:</strong>
+    <%= @event.date %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @event.name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @event.description %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @event.city %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @event.city %>
+  </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+  <i class="fa fa-arrow-up"><%= link_to 'upvote', like_event_path(@event), method: :put %></i>
+  <span><%= @event.get_upvotes.size %></span>
+
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+</div>

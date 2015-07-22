@@ -21,6 +21,14 @@ class EventsController < ApplicationController
   def edit
   end
 
+  def upvote
+
+    @event = Event.find(params[:id])
+    @event.upvote_by current_user
+    redirect_to events_path
+
+  end
+
   # POST /events
   # POST /events.json
   def create
