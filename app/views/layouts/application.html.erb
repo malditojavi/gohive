@@ -18,18 +18,20 @@
 <body>
 
   <div class="mainheader">
-    <div class="hivelogo left"></div>
-    <span class="left">About</span>
-    <div calss="cities left"><img src="">Cities</div>
-
-    <% if @current_user.present? %>
-      <div class="right"><a href="/users/sign_in" class="loginshortcuts">Hey <%= user.email %></div>
+    <div class="hivelogo left itemsleft">The New Hive</div>
+    <span class="left itemsleft">About</span>
+    <div class="cities left itemsleft"><img src="">Cities</div>
+    <div class="submit right"><a href="/events/new" class="loginshortcuts">Add a new event</a></div>
+    <% if current_user.present? %>
+      <div class="right"><a href="/users/<%= current_user.id %>" class="loginshortcuts">hey <%= current_user.email %><%= image_tag current_user.gravatar_url, class: 'useravatar' %> </div>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <% else %>
       <div class="right"><a href="/users/sign_in" class="loginshortcuts">Signup my friend!</a></div>
     <% end %>
-    <div class="submit right"><a href="/events/new" class="loginshortcuts">Add a new event</a></div>
-
-    <div class="topbanner"> <a href="/">Get all the events my friend</a></div>
+    <div class="topbanner">
+    <a href="/">Get the best of Brussels</a>
+    <span >Bullshit free</span>
+    </div>
   </div>
 
 <div class="container">

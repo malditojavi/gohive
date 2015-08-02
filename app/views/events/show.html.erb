@@ -1,29 +1,21 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<div class=" col-md-12 daywrapper">
+  <span class=""><%= Time.now.to_s(:short) %></span>
 
-  <p>
-    <strong>Date:</strong>
-    <%= @event.date %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @event.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @event.description %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= @event.city %>
-  </p>
-
-  <i class="fa fa-arrow-up"><%= link_to 'upvote', like_event_path(@event), method: :put %></i>
-  <span><%= @event.get_upvotes.size %></span>
-
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
+      <% if @event.accepted == 0 %>
+          <div class="row eventrow">
+            <span class="eventlikes"><%= link_to '↑', like_event_path(@event), method: :put %>9</span>
+            <a href="/events/<%= @event.id %>"><span class="eventtitle"><%= @event.name %> | <%= @event.city %></span></a>
+            <div class="eventgoers right">
+              <span class="">Submitted by</span><img src="http://i.imgur.com/Lpavq5s.png?1" class="individualeventgoer">
+            </div>
+          </div>
+      <% else %>
+          <div class="row eventrow red">
+            <span class="eventlikes"><%= link_to '↑', like_event_path(@event), method: :put %>9</span>
+            <a href="/events/<%= @event.id %>"><span class="eventtitle"><%= @event.name %> | <%= @event.city %></span><span class="">Only visible to admin</span></a>
+            <div class="eventgoers right">
+              <span class="">Submitted by</span><img src="http://i.imgur.com/Lpavq5s.png?1" class="individualeventgoer">
+            </div>
+          </div>
+      <% end %>
 </div>

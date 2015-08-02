@@ -48,14 +48,21 @@ background-color: #FCFDFF;
 }
 
 .topbanner {
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
   padding: 10rem;
   background-color: grey;
   background-image: url(https://wellfoundedbody.files.wordpress.com/2014/11/partypeople.jpg);
   background-size: 100%;
 }
-
+.hivelogo {
+font-weight: 600;
+font-size: 2rem;
+}
+.mainheader {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
 .dayheading {
   font-size: 3rem;
   font-weight: 700;
@@ -73,6 +80,10 @@ background-color: #FCFDFF;
 .left {
   float: left;
 }
+.itemsleft {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .right {
   float: right;
 }
@@ -82,6 +93,10 @@ background-color: #FCFDFF;
 .loginshortcuts {
   margin-left: 15px;
   margin-right: 15px;
+}
+.useravatar {
+  width: 5rem;
+  border-radius: 50px;
 }
 
 @font-face {
