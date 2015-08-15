@@ -52,3 +52,7 @@ group :development do
   gem "rails-erd"
   gem 'railroady'
 end
+
+gem 'gravtastic'
+gem 'omniauth-twitter', '~> 1.1.0'
+gem 'twitter', '~> 5.13.0'
